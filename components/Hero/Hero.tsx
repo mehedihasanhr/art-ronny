@@ -17,7 +17,7 @@ const Hero = () => {
 
                 {/* profile description */}
                 <div className="flex flex-col items-center md:items-start gap-y-4 text-center md:text-left">
-                    <p className="w-full max-w-[800px] text-base md:text-3xl">
+                    <p className="w-full max-w-[800px] leading-[43px] text-base md:text-4xl">
                         Hello, {"I’m"} Artronny. Social media post design + Web UX/UI Designer bringing fun, flexible
                         collaboration to in-house marketing teams.
                     </p>
@@ -34,18 +34,26 @@ const Hero = () => {
             {/* profile info & portfolios */}
             <div className="flex items-center flex-col lg:flex-row gap-8">
                 {/* profile slug */}
-                <div>
+                <div className="hidden lg:block">
                     <div className="w-full md:w-[500px]">
-                        <p className="text-base md:text-xl">
+                        <p className="text-base md:text-2xl">
                             We create Minimal, Creative design and i hope to make awesome designs and also we create
-                            UI/Ux Design.
+                            <span className="text-green-500"> UI/Ux Design.</span>
                         </p>
                     </div>
                 </div>
 
                 {/* profile portfolios */}
-                <div className="flex-1 w-full">
-                    <PortfoliosSlider />
+                <div className="w-full relative h-[120px]">
+                    <PortfoliosSlider
+                        images={[
+                            "/portfolio.png",
+                            "/portfolio1.png",
+                            "/portfolio.png",
+                            "/portfolio1.png",
+                            "/portfolio1.png",
+                        ]}
+                    />
                 </div>
             </div>
 

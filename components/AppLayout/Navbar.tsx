@@ -79,6 +79,9 @@ const Navbar = () => {
                                     <NavLink close={() => setIsOpen(false)} href="/#section">
                                         Service
                                     </NavLink>
+                                    <NavLink close={() => setIsOpen(false)} href="/price">
+                                        Price
+                                    </NavLink>
                                     <NavLink close={() => setIsOpen(false)} href="/#portfolio">
                                         Protfolio
                                     </NavLink>

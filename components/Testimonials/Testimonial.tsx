@@ -6,8 +6,8 @@ const Testimonial = () => {
     return (
         <div className="grid grid-cols-12 gap-6">
             <div className="col-span-12 md:col-span-6">
-                <div className="flex items-center md:py-10">
-                    <div className="flex flex-col gap-5">
+                <div className="flex items-center h-full">
+                    <div className="flex flex-col gap-5 justify-between h-full">
                         <h5>The Way Customers Do it</h5>
                         <p className="max-w-[500px] text-sm md:text-base">
                             The seller artronny did an amazing job with a quick turnaround job. We have our favorites on
@@ -18,7 +18,7 @@ const Testimonial = () => {
                             <Rating rating={4.5} />
                             <span className="text-sm font-semibold text-orange-300">(4.5)</span>
                         </div>
-                        <div className="flex gap-3">
+                        <div className="flex gap-3 mt-auto">
                             <div>
                                 <div className="relative w-12 h-12 rounded-full">
                                     <Image src="/ronny.png" alt="Ronny" fill />

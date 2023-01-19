@@ -11,7 +11,7 @@ const PortfolioCard = () => {
     return (
         <div className="p-4 md:p-8 bg-[#171F38]/60 rounded-lg">
             <h3 className="text-lg md:text-2xl">UI/UX Design</h3>
-            <p className="text-xs md:text-sm lg:text-base mt-3 text-white/50">
+            <p className="text-xs md:text-sm lg:text-base mt-3 text-white">
                 Lorem ipsum dolor sit, amet consectetur adipisicing elit. Et enim porro ab magnam facere eos ut quas.
                 Nihil eaque cumque minus dolorem sunt totam. Tenetur nihil ab reiciendis beatae amet.
             </p>

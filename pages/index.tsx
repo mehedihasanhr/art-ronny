@@ -25,7 +25,7 @@ export default function Home() {
                     <Services />
                     <Portfolios />
                     <Testimonials />
-                    <Clients images={["mlife.svg", "soldo.png", "hollywood.png"]} />
+                    <Clients images={["mlife.svg", "soldo.png", "hollywood.png", "soldo.png", "hollywood.png"]} />
                     <Contact />
                 </>
             </AppLayout>

@@ -44,7 +44,7 @@ const Experiences = () => {
                     </div>
 
                     {/* banner */}
-                    <div className="bg-indigo-600 rounded-lg relative">
+                    <div className="bg-indigo-600 rounded-lg relative py-4">
                         {/* image */}
                         <div className="absolute top-0 left-0 w-full h-full mx-auto opacity-10 pointer-events-none">
                             <div className="relative w-full h-full">
