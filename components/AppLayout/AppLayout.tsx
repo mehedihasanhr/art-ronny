@@ -32,8 +32,8 @@ const AppLayout = ({ children }: AppLayoutProps) => {
             </main>
             <Footer />
 
-            {/*<div className="ellipse1 z-0" />*/}
-            {/*<div className="ellipse2 z-0" />*/}
+            <div className="ellipse1 z-0" />
+            <div className="ellipse2 z-0" />
             {/* </div> */}
         </>
     );

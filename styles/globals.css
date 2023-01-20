@@ -70,7 +70,7 @@
   ** Ellipse 
   */
   .ellipse1{
-    @apply absolute w-[1198px] h-[1198px] -left-[100px] md:-left-[402px] -top-[600px] md:-top-[129px] z-[-1] pointer-events-none opacity-50 blur-[15px] rotate-[-15deg];
+    @apply hidden md:block absolute w-[1198px] h-[1198px] -left-[100px] md:-left-[402px] -top-[600px] md:-top-[129px] z-[-1] pointer-events-none opacity-50 blur-[15px] rotate-[-15deg];
     background: radial-gradient(93.71% 93.71% at 10.49% -7.69%, #0500FF 0%, rgba(2, 0, 83, 0) 100%);
   }
 
