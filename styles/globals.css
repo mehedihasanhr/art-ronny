@@ -75,7 +75,7 @@
   }
 
   .ellipse2{
-    @apply absolute w-[1198px] h-[1198px] -right-[600px] md:-right-[402px] top-[600px] md:top-[594px] pointer-events-none opacity-50 blur-[400px];
+    @apply hidden md:block absolute w-[1198px] h-[1198px] -right-[600px] md:-right-[402px] top-[600px] md:top-[594px] pointer-events-none opacity-50 blur-[400px];
     background: radial-gradient(93.71% 93.71% at 10.49% -7.69%, #0500FF 0%, rgba(2, 0, 83, 0) 100%) ;
     transform: matrix(-0.97, -0.26, -0.26, 0.97, 0, 0);
   }

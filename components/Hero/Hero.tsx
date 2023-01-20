@@ -63,7 +63,7 @@ const Hero = () => {
                 <div className="w-full flex items-center gap-6 md:gap-20">
                     <div className="flex items-center gap-3">
                         <h1 className="text-4xl lg:text-6xl font-medium">06</h1>
-                        <p className="text-sm md:text-base">
+                        <p className="text-xs md:text-base">
                             Years <br />
                             Experience
                         </p>
@@ -71,7 +71,7 @@ const Hero = () => {
 
                     <div className="flex items-center gap-3">
                         <h1 className="text-4xl lg:text-6xl font-medium">400+</h1>
-                        <p className="text-sm md:text-base">
+                        <p className="text-xs md:text-base">
                             Project Completed <br />
                             in 27+ Countries
                         </p>
