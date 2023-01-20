@@ -15,7 +15,7 @@ const PortfoliosSlider = ({ images }: { images: string[] }) => {
         });
 
         tl.from(".hero-slider", {
-            x: window.innerWidth < 768 ? "-30%" : "0%",
+            x: window.innerWidth < 768 ? "-70%" : "0%",
         });
 
         tl.to(".hero-slider", {
@@ -23,7 +23,7 @@ const PortfoliosSlider = ({ images }: { images: string[] }) => {
         });
     }, []);
     return (
-        <div className="flex items-center gap-4 absolute -left-[30%] md:left-0 hero-slider">
+        <div className="flex items-center gap-4 absolute -left-[70%] md:left-0 hero-slider">
             {images
                 ? images.map((img, idx) => (
                       <div key={idx} className="w-[180px] h-[120px] rounded-md relative">
