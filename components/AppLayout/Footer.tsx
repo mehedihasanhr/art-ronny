@@ -3,7 +3,7 @@ import Logo from "./Logo";
 
 const Footer = () => {
     return (
-        <div className="container  py-3 md:py-10 border-t border-indigo-600 flex flex-col md:flex-row items-center md:justify-between">
+        <div className="container py-3 md:py-10 border-t border-[#4036BB]/30 flex flex-col md:flex-row items-center md:justify-between">
             <div className="flex flex-col items-center md:items-start gap-2">
                 <Logo />
                 <span>Copyright © 2022 Artronny.</span>

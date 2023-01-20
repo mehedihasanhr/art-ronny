@@ -24,14 +24,16 @@ const AppLayout = ({ children }: AppLayoutProps) => {
 
             {/* <div className=""> */}
             <Navbar />
-            <main className={`${inter.className} py-10 relative w-screen overflow-hidden`}>
+            <main className={`${inter.className} py-10 relative w-screen overflow-hidden z-10`}>
                 {children || "Write your component there..."}
                 {/* Particales */}
 
-                <div className="ellipse1" />
-                <div className="ellipse2" />
+
             </main>
             <Footer />
+
+            <div className="ellipse1 z-0" />
+            <div className="ellipse2 z-0" />
             {/* </div> */}
         </>
     );

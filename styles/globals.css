@@ -4,18 +4,12 @@
 
 
 @layer base{
+
   *{
     scroll-behavior: smooth !important;
   }
 
-  body{
-    width: 100vw;
-    min-height: 100vh;
-    overflow-x: hidden;
-    color: rgb(255,255,255);
-    background-color: #000B1C;
-    scroll-behavior: smooth;
-  }
+
 
   h1,h2,h3,h4,h5,h6{ @apply font-bold }
   h1{ @apply text-4xl }
@@ -31,6 +25,11 @@
 @layer components {
   
   .container{ @apply px-4 }
+
+  table,tr,td,th{
+    @apply border border-white/50 py-2 px-3;
+  }
+
 
   /* swiper */
   .portfolio-slider > .swiper-wrapper {
@@ -71,16 +70,32 @@
   ** Ellipse 
   */
   .ellipse1{
-    @apply absolute w-[1198px] h-[1198px] -left-[600px] md:-left-[402px] -top-[600px] md:-top-[129px] z-[-1] pointer-events-none opacity-50 blur-[15px] rotate-[-15deg]; 
+    @apply absolute w-[1198px] h-[1198px] -left-[100px] md:-left-[402px] -top-[600px] md:-top-[129px] z-[-1] pointer-events-none opacity-50 blur-[15px] rotate-[-15deg];
     background: radial-gradient(93.71% 93.71% at 10.49% -7.69%, #0500FF 0%, rgba(2, 0, 83, 0) 100%);
   }
 
   .ellipse2{
-    @apply absolute w-[1198px] h-[1198px] -right-[600px] md:-right-[402px] -top-[600px] md:-top-[594px] z-[-1] pointer-events-none opacity-50 blur-[400px];
+    @apply absolute w-[1198px] h-[1198px] -right-[600px] md:-right-[402px] top-[600px] md:top-[594px] pointer-events-none opacity-50 blur-[400px];
     background: radial-gradient(93.71% 93.71% at 10.49% -7.69%, #0500FF 0%, rgba(2, 0, 83, 0) 100%) ;
     transform: matrix(-0.97, -0.26, -0.26, 0.97, 0, 0);
   }
 
+  .shadow-effect{
+    background: radial-gradient(93.71% 93.71% at 10.49% -7.69%, rgba(5, 0, 255, 0.5) 0%, rgba(2, 0, 83, 0) 100%);
+  }
+
+} 
+
+
+html, body{
+  width: 100vw;
+  min-height: 100vh;
+  overflow-x: hidden !important;
+  color: rgb(255,255,255);
+  background-color: #000B1C;
+  scroll-behavior: smooth;
 }
+
+
 
 

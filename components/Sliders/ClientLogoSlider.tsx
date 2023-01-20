@@ -20,7 +20,7 @@ const ClientLogoSlider = ({ children }: { children: React.ReactNode[] }) => {
                 768: { slidesPerView: 3 },
                 992: { slidesPerView: 4 },
             }}
-            speed={3000}
+            speed={5000}
             modules={[Autoplay]}
             className="w-full portfolio-slider"
         >

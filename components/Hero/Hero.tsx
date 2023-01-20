@@ -17,8 +17,8 @@ const Hero = () => {
 
                 {/* profile description */}
                 <div className="flex flex-col items-center md:items-start gap-y-4 text-center md:text-left">
-                    <p className="w-full max-w-[800px] leading-[43px] text-base md:text-4xl">
-                        Hello, {"I’m"} Artronny. Social media post design + Web UX/UI Designer bringing fun, flexible
+                    <p className="w-full max-w-[800px] lg:leading-[43px] text-base md:text-4xl">
+                        Hello, {"I’m"} Art Ronny. Social media post design + Web UX/UI Designer bringing fun, flexible
                         collaboration to in-house marketing teams.
                     </p>
 
@@ -44,7 +44,7 @@ const Hero = () => {
                 </div>
 
                 {/* profile portfolios */}
-                <div className="w-full relative h-[120px]">
+                <div className="w-full relative h-[120px] ">
                     <PortfoliosSlider
                         images={[
                             "/portfolio.png",
