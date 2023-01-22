@@ -8,8 +8,10 @@ import Testimonials from "@/components/Testimonials/Testimonials";
 import Image from "next/image";
 import Clients from "@/components/Clients/Clients";
 import Contact from "@/components/Contact/Contact";
+import { useClientState } from "@/hooks/useClientState";
 
 export default function Home() {
+    const { clients } = useClientState();
     return (
         <>
             <Head>
@@ -25,7 +27,13 @@ export default function Home() {
                     <Services />
                     <Portfolios />
                     <Testimonials />
-                    <Clients images={["mlife.svg", "soldo.png", "hollywood.png", "soldo.png", "hollywood.png"]} />
+                    <Clients>
+                        {clients.map((client) => (
+                            <div key={client.id} className="h-70 w-full">
+                                {client.image && <Image src={client.image} width={330} height={70} alt="" />}
+                            </div>
+                        ))}
+                    </Clients>
                     <Contact />
                 </>
             </AppLayout>

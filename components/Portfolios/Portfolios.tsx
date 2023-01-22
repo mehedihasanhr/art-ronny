@@ -1,3 +1,4 @@
+import { usePortfolioState } from "@/hooks/usePortfolioState";
 import dynamic from "next/dynamic";
 import Link from "next/link";
 import React from "react";
@@ -5,6 +6,7 @@ import React from "react";
 const PortfolioCard = dynamic(() => import("./PortfolioCard"), { ssr: false });
 
 const Portfolios = () => {
+    const { portfolios } = usePortfolioState();
     return (
         <section id="portfolio">
             <div className="container pt-[120px]">
@@ -31,11 +33,12 @@ const Portfolios = () => {
                 </div>
 
                 <div className="grid grid-cols-12 gap-6 py-10">
-                    {[1, 2, 3, 4, 5, 6].map((item) => (
-                        <div className="col-span-12 md:col-span-6 xl:col-span-4" key={item}>
-                            <PortfolioCard />
-                        </div>
-                    ))}
+                    {portfolios &&
+                        portfolios.map((portfolio) => (
+                            <div className="col-span-12 md:col-span-6 xl:col-span-4" key={portfolio.id}>
+                                <PortfolioCard portfolio={portfolio} />
+                            </div>
+                        ))}
                 </div>
             </div>
         </section>

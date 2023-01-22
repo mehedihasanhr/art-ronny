@@ -6,7 +6,7 @@ export const Input = ({
     return (
         <input
             {...props}
-            className="w-full px-4 py-2 bg-[#021C42] border-none rounded-md focus:outline-none placholder text-white text-sm"
+            className={`w-full px-4 py-2 bg-[#021C42] border-none rounded-md focus:outline-none placholder text-white text-sm ${props.className}`}
         />
     );
 };

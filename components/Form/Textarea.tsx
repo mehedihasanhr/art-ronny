@@ -6,7 +6,7 @@ export const Textarea = ({
     return (
         <textarea
             {...props}
-            className="w-full p-4 bg-[#021C42] border-none rounded-md focus:outline-none text-base placholder text-white"
+            className="w-full py-2 px-4 bg-[#021C42] border-none text-sm rounded-md focus:outline-none placholder:text-sm text-white"
         />
     );
 };

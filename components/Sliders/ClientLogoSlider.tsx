@@ -2,7 +2,14 @@ import React from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay } from "swiper";
 
-const ClientLogoSlider = ({ children }: { children: React.ReactNode[] }) => {
+const bp = {
+    320: { slidesPerView: 1 },
+    576: { slidesPerView: 2 },
+    768: { slidesPerView: 3 },
+    992: { slidesPerView: 4 },
+};
+
+const ClientLogoSlider = ({ children, breakpoints }: { children: React.ReactNode[]; breakpoints: any }) => {
     const slides = React.Children.toArray(children);
     return (
         <Swiper
@@ -14,12 +21,7 @@ const ClientLogoSlider = ({ children }: { children: React.ReactNode[] }) => {
                 pauseOnMouseEnter: true,
                 disableOnInteraction: false,
             }}
-            breakpoints={{
-                320: { slidesPerView: 1 },
-                576: { slidesPerView: 2 },
-                768: { slidesPerView: 3 },
-                992: { slidesPerView: 4 },
-            }}
+            breakpoints={breakpoints || bp}
             speed={5000}
             modules={[Autoplay]}
             className="w-full portfolio-slider"

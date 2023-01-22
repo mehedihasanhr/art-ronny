@@ -9,6 +9,32 @@ import "../styles/uicons-solid-rounded/css/uicons-solid-rounded.css";
 import "../styles/uicons-solid-straight/css/uicons-solid-straight.css";
 import "../styles/uicons-bold-rounded/css/uicons-bold-rounded.css";
 
+import { Provider } from "react-redux";
+import { store } from "@/services/store/store";
+import { setAuth, setLoading } from "@/services/store/slices/AuthSlice";
+import { authStateListener } from "@/services/firebase/auth/auth_state_listener";
+import React from "react";
+
 export default function App({ Component, pageProps }: AppProps) {
-    return <Component {...pageProps} />;
+    // Listen to auth state changes
+    React.useEffect(() => {
+        const unsubscribe = authStateListener((user) => {
+            store.dispatch(setAuth(user));
+
+            let timeout = setTimeout(() => {
+                store.dispatch(setLoading(false));
+                clearTimeout(timeout);
+            }, 300);
+        });
+        unsubscribe();
+        return () => {
+            unsubscribe();
+        };
+    }, []);
+
+    return (
+        <Provider store={store}>
+            <Component {...pageProps} />
+        </Provider>
+    );
 }

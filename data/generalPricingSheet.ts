@@ -1,0 +1,15 @@
+export const generalPricingSheet = [
+    "Motion Post - $35",
+    "Billboard Design - $100",
+    "Menu Card - $200",
+    "Letterhead - $40",
+    "Web Ads - $15",
+    "Book Cover Design - $100",
+    "Web Banner - $20",
+    "Social Media Cover Design - $20",
+    "Post Design - $15",
+    "Email Templates Design - $80",
+    "Blog Image Design - $20",
+    "Poster / Flyer - $40",
+    "Business Card - $50",
+];

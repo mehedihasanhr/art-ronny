@@ -52,14 +52,14 @@ const Navbar = () => {
         window.addEventListener("scroll", handleScroll);
     }, []);
 
+    console.log(sticky);
     return (
-        <header className={`${sticky ? "sticky top-0 left-0 w-full z-[50]" : ""} max-w-screen z-20`}>
+        <header className={`${sticky ? "sticky top-0 left-0 w-full z-[50]" : "z-20"} max-w-screen `}>
             <div
                 className={`bg-[#000B1C] z-20 w-full overflow-x-hidden h-auto md:h-auto top-0 left-0  ${
                     mobileNav && isOpen ? "h-full fixed md:relative" : "overflow-hidden h-auto"
                 }`}
             >
-
                 <div className="relative w-full navbar">
                     <div className="container">
                         <div className="py-4 md:py-6 flex items-center justify-between">

@@ -27,8 +27,6 @@ const AppLayout = ({ children }: AppLayoutProps) => {
             <main className={`${inter.className} py-10 relative w-screen overflow-hidden z-10`}>
                 {children || "Write your component there..."}
                 {/* Particales */}
-
-
             </main>
             <Footer />
 

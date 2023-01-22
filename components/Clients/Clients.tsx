@@ -1,15 +1,17 @@
 import dynamic from "next/dynamic";
-import Image from "next/image";
 import React from "react";
 import { Client } from "./Client";
 const ClientLogoSlider = dynamic(() => import("../Sliders/ClientLogoSlider"), { ssr: false });
 
-const Clients = ({ images }: { images: string[] }) => {
+const Clients = ({ children, breakpoints }: any) => {
+    const childs = React.Children.toArray(children);
     return (
         <div className="container">
-            <ClientLogoSlider>
-                {images.map((image, index) => (
-                    <Client key={index} src={image} />
+            <ClientLogoSlider breakpoints={breakpoints}>
+                {childs.map((child, index) => (
+                    <Client key={index}>
+                        <div className="relative w-full h-[70px]">{child}</div>
+                    </Client>
                 ))}
             </ClientLogoSlider>
         </div>

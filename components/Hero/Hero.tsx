@@ -1,9 +1,14 @@
+import { useHeroSliderState } from "@/hooks/useHeroSliderState";
 import dynamic from "next/dynamic";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 const PortfoliosSlider = dynamic(() => import("../Sliders/PortfoliosSlider"), { ssr: false });
 const Hero = () => {
+    const { heroSliders } = useHeroSliderState();
+
+    const images = heroSliders.map((slider) => slider.image);
+
     return (
         <div className="container md:py-[60px] flex flex-col gap-y-14 lg:gap-y-32">
             {/* text section */}
@@ -45,15 +50,7 @@ const Hero = () => {
 
                 {/* profile portfolios */}
                 <div className="w-full relative h-[120px] ">
-                    <PortfoliosSlider
-                        images={[
-                            "/portfolio.png",
-                            "/portfolio1.png",
-                            "/portfolio.png",
-                            "/portfolio1.png",
-                            "/portfolio1.png",
-                        ]}
-                    />
+                    <PortfoliosSlider images={images} />
                 </div>
             </div>
 
