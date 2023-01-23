@@ -7,6 +7,7 @@ import clientSlice from "./slices/clientSlice";
 import heroSliderSlice from "./slices/heroSliderSlice";
 import priceCardSlice from "./slices/priceCardSlice";
 import PriceTableSlice from "./slices/priceTableSlice";
+import experienceSlice from "./slices/experienceSlice";
 
 export const store = configureStore({
     reducer: {
@@ -18,6 +19,7 @@ export const store = configureStore({
         heroSliders: heroSliderSlice,
         priceCards: priceCardSlice,
         priceTables: PriceTableSlice,
+        experiences: experienceSlice,
     },
     middleware: (getDefaultMiddleware) =>
         getDefaultMiddleware({

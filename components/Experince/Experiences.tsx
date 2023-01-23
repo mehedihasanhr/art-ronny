@@ -1,3 +1,5 @@
+import { useExperienceState } from "@/hooks/useExperienceState";
+import { ExperienceType } from "@/services/store/slices/experienceSlice";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
@@ -5,27 +7,30 @@ import { experience } from "./data";
 
 const Experiences = () => {
     const [expShow, setExpShow] = React.useState(false);
+    const { experiences } = useExperienceState();
     return (
         <section id="experience">
             <div className="container pt-[120px]">
-                <div className="container flex flex-col gap-14">
+                <div className="flex flex-col gap-y-14">
                     <h3>Experience</h3>
                     <div className={`overflow-hidden p-4 relative ${expShow ? "" : "h-[550px]"}`}>
                         <div className="grid grid-cols-12 gap-x-6">
-                            {experience.map((exp) => (
-                                <div
-                                    key={exp.id}
-                                    className="border-l-2 pb-10 border-gray-700 col-span-12 lg:col-span-6 relative before:absolute before:top-0 before:-left-[6px] before:w-3 before:h-3 before:bg-indigo-500"
-                                >
-                                    <div className="flex flex-col gap-2 px-6">
-                                        <span className="block text-sm">{exp.date}</span>
-                                        <span className="block text-sm ">{exp.location}</span>
-                                        <h5 className="-mt-1">{exp.title}</h5>
-                                        <h3>{exp.company}</h3>
-                                        <p>{exp.description}</p>
-                                    </div>
-                                </div>
-                            ))}
+                            {experiences.length > 0
+                                ? experiences.map((exp: ExperienceType) => (
+                                      <div
+                                          key={exp.id}
+                                          className="border-l-2 pb-10 border-gray-700 col-span-12 lg:col-span-6 relative before:absolute before:top-0 before:-left-[6px] before:w-3 before:h-3 before:bg-indigo-500"
+                                      >
+                                          <div className="flex flex-col gap-2 px-6">
+                                              <span className="block text-sm">{`${exp.duration.start} - ${exp.duration.end}`}</span>
+                                              <span className="block text-sm ">{exp.location}</span>
+                                              <h5 className="-mt-1">{exp.position}</h5>
+                                              <h3>{exp.company}</h3>
+                                              <p>{exp.description}</p>
+                                          </div>
+                                      </div>
+                                  ))
+                                : null}
                         </div>
                         {!expShow && (
                             <div className="absolute bottom-0 left-0 w-full z-10 h-28 bg-gradient-to-t from-[#000B1C] to-transparent" />

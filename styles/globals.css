@@ -9,8 +9,6 @@
     scroll-behavior: smooth !important;
   }
 
-
-
   h1,h2,h3,h4,h5,h6{ @apply font-bold }
   h1{ @apply text-4xl }
   h2{ @apply text-3xl }
@@ -40,11 +38,55 @@
     @apply w-3 h-3 bg-indigo-500 rounded-full;
   }
 
+  /*
+  ****** Navbar *******
+  */
   .navbar{
+    @apply relative py-5;
     background: linear-gradient(269.99deg, #000B1C 0%, #01084D 99.98%);
   }
 
+  .navbar__sticky{
+    @apply fixed top-0 left-0 right-0 z-50 py-3;
+  }
+
+  .nav{
+    @apply flex items-center gap-5;
+  }
   
+  .nav__mobile{
+    @apply hidden absolute top-full left-0 flex-col items-center w-full z-[900] h-screen bg-[#000B1C] pt-20;
+  }
+
+  .nav__mobile--active{
+    @apply flex;
+  }
+
+
+  .nav__item{
+    @apply text-lg md:text-base font-medium cursor-pointer;
+  }
+
+  .nav__link{
+    @apply  transition-colors duration-300 py-1;
+  }
+
+  .nav:hover > .nav__item > .nav__link{
+    @apply text-white/50;
+  }
+
+  .nav__link:hover{
+    @apply text-white/90 !important
+  }
+
+  .nav__link--active, 
+  .nav__link--active:hover{
+    @apply text-indigo-300 !important
+  }
+
+  
+
+
 
   .scroll::-webkit-scrollbar{
     width: 3px

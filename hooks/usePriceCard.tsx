@@ -23,6 +23,7 @@ export const usePriceCard = () => {
 
     // fetch price cards from database
     const fetchPriceCardsHandler = React.useCallback(async () => {
+        if (priceCards.length > 0) return;
         dispatch(setLoading(true));
         try {
             const priceCards = await getDocuments("priceCards");
@@ -31,6 +32,7 @@ export const usePriceCard = () => {
             dispatch(setError(error.message));
         }
         dispatch(setLoading(false));
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [dispatch]);
 
     // update price card

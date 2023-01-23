@@ -30,7 +30,7 @@ export default function PricePage() {
                 <div className="relative w-96 h-48 md:w-[650px] md:h-[315px] mx-auto">
                     <Image src={"/price-page-big-logo.svg"} alt={""} fill />
                 </div>
-                <div className="grid grid-cols-12 gap-y-10 md:gap-10 mt-32">
+                <div className="grid grid-cols-12 gap-y-10 md:gap-10 mt-16">
                     {priceCards?.map((priceCard, index) => (
                         <div className=" col-span-12 md:col-span-6 lg:col-span-4" key={priceCard.id}>
                             <PriceCard priceCardDetails={priceCard} />
@@ -75,11 +75,14 @@ export default function PricePage() {
 
                 {/*    tags */}
                 <div>
-                    <h2 className="mb-2">General Pricing Sheet</h2>
+                    <h2 className="mb-2 text-[24px] md:text-[30px]">General Pricing Sheet</h2>
                     <p className="text-white/50">You can purchase an order if you want singe design.</p>
                     <div className="flex items-center flex-wrap gap-4 py-4">
                         {generalPricingSheet.map((item, i) => (
-                            <div key={i} className="py-1 px-2.5 border border-dashed text-xl border-white/60">
+                            <div
+                                key={i}
+                                className="py-1 px-2.5 border border-dashed text-base md:text-xl border-white/60"
+                            >
                                 {item}
                             </div>
                         ))}
@@ -88,7 +91,7 @@ export default function PricePage() {
 
                 {/*   clients */}
                 <div className="mt-[100px]">
-                    <h2 className="mb-2">Online Payment Method</h2>
+                    <div className="mb-2 text-[24px] md:text-[30px]">Online Payment Method</div>
                     <p className="text-white/50 mb-4">
                         We also accept other payment services. Only we do not accept PayPal.
                     </p>
@@ -96,6 +99,8 @@ export default function PricePage() {
                     <div className="mt-[50px]">
                         <Clients
                             breakpoints={{
+                                332: { slidesPerView: 2 },
+                                576: { slidesPerView: 3 },
                                 992: { slidesPerView: 5 },
                             }}
                         >

@@ -43,7 +43,7 @@ const Services = () => {
     }, []);
 
     return (
-        <section id="section">
+        <section id="service">
             <div className="container pt-[120px]">
                 <div className="flex flex-wrap gap-y-2 items-center justify-between mb-8">
                     <h1 className="text-xl md:text-4xl md:w-72">Services we can help you.</h1>

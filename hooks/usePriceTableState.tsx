@@ -24,6 +24,7 @@ export const usePriceTableState = () => {
 
     // fetch price tables
     const fetchPriceTables = React.useCallback(async () => {
+        if (priceTables.length > 0) return;
         dispatch(setLoading(true));
         try {
             const priceTables = await getDocuments("priceTables");
@@ -32,6 +33,7 @@ export const usePriceTableState = () => {
             dispatch(setError(error.message));
         }
         dispatch(setLoading(false));
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [dispatch]);
 
     // add price table

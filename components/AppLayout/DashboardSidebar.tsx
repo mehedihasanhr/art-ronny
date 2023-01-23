@@ -18,6 +18,7 @@ export default function DashboardSidebar() {
 
             <div className="flex-1 flex flex-col gap-4 py-8 px-4 h-full">
                 <SidebarLink href="/dashboard/portfolio" asPath={router.asPath} title="Portfolio" />
+                <SidebarLink href="/dashboard/experiences" asPath={router.asPath} title="Experiences" />
                 <SidebarLink href="/dashboard/services" asPath={router.asPath} title="Services" />
                 <SidebarLink href="/dashboard/testimonial" asPath={router.asPath} title="Testimonial" />
                 <SidebarLink href="/dashboard/client" asPath={router.asPath} title="Client" />
