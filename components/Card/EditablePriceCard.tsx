@@ -60,7 +60,7 @@ const EditablePriceCard = ({ update, updating, priceCardDetails }: EditablePrice
         if (!planName || !planPrice || !description || !features) return;
 
         const data = {
-            planName,
+            title: planName,
             price: planPrice,
             description,
             features,
