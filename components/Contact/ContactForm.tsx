@@ -29,6 +29,7 @@ export const ContactForm = () => {
                         id="contactform"
                         ref={ref}
                     >
+                        <input name="_redirect" type="hidden" id="name" value="https://art-ronny.vercel.app/" />
                         <Label title="Email" required={true} icon={<MdAttachEmail className="text-xl text-white" />}>
                             <Input type="text" name="email" placeholder="Your Email" />
                         </Label>

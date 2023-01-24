@@ -61,7 +61,7 @@ const EditablePriceCard = ({ update, updating, priceCardDetails }: EditablePrice
 
         const data = {
             planName,
-            planPrice,
+            price: planPrice,
             description,
             features,
         };
