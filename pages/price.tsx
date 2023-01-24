@@ -55,15 +55,15 @@ export default function PricePage() {
                                 <tbody>
                                     {priceTables.map((priceTable) => (
                                         <tr key={priceTable.id}>
-                                            <td className="text-center py-4">Social Media Cover Design</td>
+                                            <td className="text-center py-4">{priceTable.title}</td>
                                             <td className="text-center py-4">
-                                                <IsInclude isIncluded={true} />
+                                                <IsInclude isIncluded={priceTable.startup} />
                                             </td>
                                             <td className="text-center py-4">
-                                                <IsInclude isIncluded={true} />
+                                                <IsInclude isIncluded={priceTable.standard} />
                                             </td>
                                             <td className="text-center py-4">
-                                                <IsInclude isIncluded={false} />
+                                                <IsInclude isIncluded={priceTable.gold} />
                                             </td>
                                         </tr>
                                     ))}

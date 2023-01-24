@@ -41,8 +41,8 @@ export default function Price() {
         }
         const newPriceTable = {
             title: serviceName,
-            standard: serviceIsAvailableStartUp,
-            startup: serviceIsAvailableStandard,
+            startup: serviceIsAvailableStartUp,
+            standard: serviceIsAvailableStandard,
             gold: serviceIsAvailableGoldenPlan,
         };
 

@@ -7,8 +7,9 @@ type NavLinkProps = {
     title?: string;
 };
 
-const NavLink = ({ children, href = "/", title }: NavLinkProps) => {
-    const { asPath } = useRouter();
+const NavLink = ({ children, href, title }: NavLinkProps) => {
+    const router = useRouter();
+    const { asPath } = router;
 
     const isActive = asPath === href;
 

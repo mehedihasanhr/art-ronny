@@ -5,7 +5,7 @@ import DashboardPortfolioCard from "@/components/Portfolios/DashboardPortfolioCa
 import { usePortfolioState } from "@/hooks/usePortfolioState";
 
 export default function Portfolio() {
-    const { portfolios, loading, error, getAllPortfolios } = usePortfolioState();
+    const { portfolios, loading, error, getAllPortfolios, deletePortfolio } = usePortfolioState();
 
     return (
         <DashboardLayout>
@@ -21,7 +21,13 @@ export default function Portfolio() {
                                 <h5>Loading...</h5>
                             ) : (
                                 portfolios.map((portfolio) => {
-                                    return <DashboardPortfolioCard key={portfolio.id} portfolio={portfolio} />;
+                                    return (
+                                        <DashboardPortfolioCard
+                                            key={portfolio.id}
+                                            portfolio={portfolio}
+                                            deleteExp={deletePortfolio}
+                                        />
+                                    );
                                 })
                             )}
                         </div>

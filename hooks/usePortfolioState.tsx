@@ -9,6 +9,7 @@ import {
 import { addDocument } from "@/services/firebase/db/add_document";
 import { PortfolioType } from "@/services/store/slices/portfolioSlice";
 import { getDocuments } from "@/services/firebase/db/get_documents";
+import { deleteDocument } from "@/services/firebase/db/delete_document";
 
 export const usePortfolioState = () => {
     const { portfolios, loading, error } = useAppSelector((state) => state.portfolios);
@@ -35,7 +36,7 @@ export const usePortfolioState = () => {
     };
 
     // get all portfolios
-    const getAllPortfolios = async () => {
+    const getAllPortfolios = React.useCallback(async () => {
         if (portfolios.length > 0) return;
 
         dispatch(setLoading(true));
@@ -50,7 +51,15 @@ export const usePortfolioState = () => {
                 dispatch(setError("Something went wrong"));
             }
         });
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [dispatch]);
+
+    // delete a portfolio
+    const deletePortfolio = async (id: string) => {
+        await deleteDocument("portfolios", id).then((res: any) => {
+            getAllPortfolios();
+        });
     };
 
-    return { portfolios, loading, error, addPortfolio, getAllPortfolios };
+    return { portfolios, loading, error, addPortfolio, getAllPortfolios, deletePortfolio };
 };
