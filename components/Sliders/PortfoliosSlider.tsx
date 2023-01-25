@@ -1,7 +1,7 @@
-import * as React from "react";
-import gsap from "gsap";
+import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Image from "next/image";
+import * as React from "react";
 
 const PortfoliosSlider = ({ images }: { images: string[] }) => {
     React.useEffect(() => {

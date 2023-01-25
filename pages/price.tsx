@@ -1,15 +1,14 @@
-import * as React from "react";
-import AppLayout from "../components/AppLayout/AppLayout";
-import Image from "next/image";
+import Loading from "@/components/AppLayout/Loading";
 import PriceCard from "@/components/Card/PriceCard";
+import Clients from "@/components/Clients/Clients";
+import { generalPricingSheet } from "@/data/generalPricingSheet";
+import { paymentMethods } from "@/data/paymentMethods";
+import { usePriceCard } from "@/hooks/usePriceCard";
+import { usePriceTableState } from "@/hooks/usePriceTableState";
+import Image from "next/image";
 import { FiCheckCircle } from "react-icons/fi";
 import { MdOutlineCancel } from "react-icons/md";
-import { usePriceCard } from "@/hooks/usePriceCard";
-import Loading from "@/components/AppLayout/Loading";
-import { usePriceTableState } from "@/hooks/usePriceTableState";
-import { generalPricingSheet } from "@/data/generalPricingSheet";
-import Clients from "@/components/Clients/Clients";
-import { paymentMethods } from "@/data/paymentMethods";
+import AppLayout from "../components/AppLayout/AppLayout";
 
 const IsInclude = ({ isIncluded = false }: { isIncluded: boolean }) => {
     return isIncluded ? (
@@ -27,10 +26,10 @@ export default function PricePage() {
     return (
         <AppLayout>
             <div className="container">
-                <div className="relative w-96 h-48 md:w-[650px] md:h-[315px] mx-auto">
+                <div className="relative w-80 h-48 md:w-[650px] md:h-[315px] mx-auto">
                     <Image src={"/price-page-big-logo.svg"} alt={""} fill />
                 </div>
-                <div className="grid grid-cols-12 gap-y-10 md:gap-10 mt-16">
+                <div className="grid grid-cols-12 gap-y-10 md:gap-10 mt-8 md:mt-16">
                     {priceCards?.map((priceCard, index) => (
                         <div className=" col-span-12 md:col-span-6 lg:col-span-4" key={priceCard.id}>
                             <PriceCard priceCardDetails={priceCard} />
@@ -90,7 +89,7 @@ export default function PricePage() {
                 </div>
 
                 {/*   clients */}
-                <div className="mt-[100px]">
+                <div className="mt-14 md:mt-[100px]">
                     <div className="mb-2 text-[24px] md:text-[30px]">Online Payment Method</div>
                     <p className="text-white/50 mb-4">
                         We also accept other payment services. Only we do not accept PayPal.

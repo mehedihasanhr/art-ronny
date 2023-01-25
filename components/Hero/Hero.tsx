@@ -1,12 +1,14 @@
+import { heroText } from "@/constants/heroText";
 import { useHeroSliderState } from "@/hooks/useHeroSliderState";
 import dynamic from "next/dynamic";
 import Image from "next/image";
 import Link from "next/link";
-import React from "react";
+const TypeingEffectText = dynamic(() => import("./TypingEffectText"), { ssr: false });
 const PortfoliosSlider = dynamic(() => import("../Sliders/PortfoliosSlider"), { ssr: false });
+
+
 const Hero = () => {
     const { heroSliders } = useHeroSliderState();
-
     const images = heroSliders.map((slider) => slider.image);
 
     return (
@@ -22,9 +24,8 @@ const Hero = () => {
 
                 {/* profile description */}
                 <div className="flex flex-col items-center md:items-start gap-y-4 text-center md:text-left">
-                    <p className="w-full max-w-[800px] lg:leading-[43px] text-base md:text-4xl">
-                        Hello, {"I’m"} Art Ronny. Social media post design + Web UX/UI Designer bringing fun, flexible
-                        collaboration to in-house marketing teams.
+                    <p className="w-full max-w-[800px] lg:leading-[43px] text-base md:text-4xl optima">
+                        {heroText.top}
                     </p>
 
                     <Link
@@ -42,8 +43,10 @@ const Hero = () => {
                 <div className="hidden lg:block">
                     <div className="w-full md:w-[500px]">
                         <p className="text-base md:text-2xl">
-                            We create Minimal, Creative design and i hope to make awesome designs and also we create
-                            <span className="text-green-500"> UI/Ux Design.</span>
+                            {heroText.bottom}
+                            <span className="text-green-500">
+                                <TypeingEffectText words={heroText.awesomeText} />
+                            </span>
                         </p>
                     </div>
                 </div>
@@ -67,10 +70,10 @@ const Hero = () => {
                     </div>
 
                     <div className="flex items-center gap-3">
-                        <h1 className="text-4xl lg:text-6xl font-medium">400+</h1>
+                        <h1 className="text-4xl lg:text-6xl font-medium">587+</h1>
                         <p className="text-xs md:text-base">
                             Project Completed <br />
-                            in 27+ Countries
+                            in 37+ Countries
                         </p>
                     </div>
                 </div>

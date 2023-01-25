@@ -1,19 +1,19 @@
+import "@/styles/fonts/style.css";
 import "@/styles/globals.css";
 import type { AppProps } from "next/app";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
+import "../styles/uicons-bold-rounded/css/uicons-bold-rounded.css";
 import "../styles/uicons-regular-rounded/css/uicons-regular-rounded.css";
-import "../styles/uicons-solid-straight/css/uicons-solid-straight.css";
 import "../styles/uicons-solid-rounded/css/uicons-solid-rounded.css";
 import "../styles/uicons-solid-straight/css/uicons-solid-straight.css";
-import "../styles/uicons-bold-rounded/css/uicons-bold-rounded.css";
 
-import { Provider } from "react-redux";
-import { store } from "@/services/store/store";
-import { setAuth, setLoading } from "@/services/store/slices/AuthSlice";
 import { authStateListener } from "@/services/firebase/auth/auth_state_listener";
+import { setAuth, setLoading } from "@/services/store/slices/AuthSlice";
+import { store } from "@/services/store/store";
 import React from "react";
+import { Provider } from "react-redux";
 
 export default function App({ Component, pageProps }: AppProps) {
     // Listen to auth state changes
